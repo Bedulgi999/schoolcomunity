@@ -1,0 +1,259 @@
+/* 📌 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pretendard", sans-serif;
+}
+
+body {
+  background: #f3f7ff;
+  color: #333;
+  font-size: 15px;
+}
+
+/* 📌 상단 헤더 */
+.header {
+  width: 100%;
+  background: #4a7dfc;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 메뉴 */
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  background: white;
+  color: #4a7dfc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.nav-btn:hover {
+  background: #e3edff;
+}
+
+/* 📌 인증영역 */
+.auth-area button {
+  margin-left: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+.btn-login {
+  background: white;
+  color: #4a7dfc;
+  font-weight: 600;
+}
+.btn-logout {
+  background: #ff5757;
+  color: white;
+}
+
+/* 📌 메인 레이아웃 */
+.container {
+  display: flex;
+  width: 1200px;
+  margin: 15px auto;
+  gap: 20px;
+}
+
+/* 📌 콘텐츠 */
+.content {
+  flex: 3;
+}
+
+/* 📌 사이드바 */
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 카드 박스 */
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 📌 게시판 헤더 */
+.board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#search-form {
+  display: flex;
+  gap: 4px;
+}
+
+#search-form input {
+  padding: 5px;
+  border: 1px solid #bcd2ff;
+  border-radius: 6px;
+}
+
+#search-form button {
+  background: #4a7dfc;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* 📌 글쓰기 카드 */
+.write-card input,
+.write-card textarea,
+#write-category {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #adc5ff;
+  margin-bottom: 6px;
+}
+
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.image-preview img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* 📌 버튼 스타일 */
+.btn-primary {
+  background: #4a7dfc;
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #e2e9ff;
+  color: #355fcc;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: #ff5252;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-primary.full,
+.btn-secondary.full {
+  width: 100%;
+}
+
+/* 📌 게시글 테이블 */
+.post-table {
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: collapse;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.post-table th, .post-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e3e9ff;
+  text-align: center;
+}
+
+.post-table tr:hover {
+  background: #f0f4ff;
+  cursor: pointer;
+}
+
+/* 📌 게시글 상세 */
+.post-detail {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+.post-images img {
+  width: 180px;
+  border-radius: 10px;
+  margin-right: 6px;
+  margin-top: 6px;
+}
+
+.comment-list li {
+  border-bottom: 1px solid #e3e9ff;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+/* 📌 푸터 */
+.footer {
+  margin-top: 25px;
+  padding: 18px;
+  background: #4a7dfc;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+/* 📌 공통 */
+.hidden {
+  display: none !important;
+}
+.small {
+  font-size: 13px;
+}
+
+/* 링크 버튼 */
+.link {
+  background: none;
+  border: none;
+  color: #4a7dfc;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+}

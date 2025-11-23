@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>우리 학교 커뮤니티</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="logo" id="logo-btn">🏫 우리 학교 커뮤니티</div>
+  <nav class="nav">
+    <button class="nav-btn" data-category="">전체</button>
+    <button class="nav-btn" data-category="공지">공지사항</button>
+    <button class="nav-btn" data-category="자유">자유게시판</button>
+    <button class="nav-btn" data-category="질문">질문답변</button>
+    <button class="nav-btn" data-category="동아리">동아리</button>
+  </nav>
+  <div class="auth-area" id="auth-area">
+    <!-- JS에서 채움 -->
+  </div>
+</header>
+
+<main class="container">
+  <!-- 메인 게시판 -->
+  <section class="main-content">
+    <div class="flash-area" id="flash-area"></div>
+
+    <div class="board-header">
+      <h2 id="board-title">게시판</h2>
+      <form id="search-form" class="search-form">
+        <input type="text" id="search-input" placeholder="검색어를 입력하세요">
+        <button type="submit" class="btn-primary">검색</button>
+      </form>
+    </div>
+
+    <!-- 글쓰기 폼 -->
+    <div class="card write-card hidden" id="write-card">
+      <h3>✏️ 새 글 작성</h3>
+      <form id="write-form" class="form-box">
+        <label>말머리</label>
+        <select id="write-category">
+          <option value="자유">자유</option>
+          <option value="공지">공지 (관리자용)</option>
+          <option value="질문">질문</option>
+          <option value="정보">정보</option>
+          <option value="동아리">동아리</option>
+        </select>
+
+        <label>제목</label>
+        <input type="text" id="write-title" required>
+
+        <label>내용</label>
+        <textarea id="write-content" rows="6" required></textarea>
+
+        <label>이미지 업로드 (여러 장 가능)</label>
+        <input type="file" id="write-images" accept="image/*" multiple>
+        <div class="image-preview" id="image-preview"></div>
+
+        <div class="write-actions">
+          <button type="submit" class="btn-primary">등록</button>
+          <button type="button" class="btn-outline" id="cancel-write-btn">취소</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- 글 목록 -->
+    <table class="post-table">
+      <thead>
+      <tr>
+        <th class="col-category">말머리</th>
+        <th class="col-title">제목</th>
+        <th class="col-writer">작성자</th>
+        <th class="col-date">작성일</th>
+      </tr>
+      </thead>
+      <tbody id="post-list-body">
+      <!-- JS에서 채움 -->
+      </tbody>
+    </table>
+
+    <!-- 글 상세/댓글 -->
+    <section class="post-detail hidden" id="post-detail">
+      <button class="btn-outline small" id="post-detail-close">← 목록으로</button>
+      <article class="post-detail-inner">
+        <div class="post-header">
+          <div class="post-category" id="detail-category"></div>
+          <h2 class="post-title" id="detail-title"></h2>
+          <div class="post-meta">
+            <span id="detail-author"></span>
+            <span id="detail-date"></span>
+          </div>
+        </div>
+        <div class="post-images" id="detail-images"></div>
+        <div class="post-body" id="detail-content"></div>
+        <button class="btn-danger hidden" id="delete-post-btn">게시글 삭제 (관리자)</button>
+      </article>
+
+      <section class="comment-section">
+        <h3>댓글</h3>
+        <ul class="comment-list" id="comment-list"></ul>
+
+        <div id="comment-form-area">
+          <!-- 로그인 상태에 따라 JS에서 내용 채움 -->
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <!-- 사이드바 -->
+  <aside class="sidebar">
+    <div class="card">
+      <h3>📢 안내</h3>
+      <p class="small-text">
+        이 사이트는 <strong>학교 커뮤니티 연습용</strong>입니다.<br>
+        실제 서비스가 아니며, 학습/포트폴리오 목적만으로 사용하세요.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🔥 이용 TIP</h3>
+      <ul class="simple-list">
+        <li>관리자: <strong>admin</strong></li>
+        <li>비밀번호: <strong>hanbomadmin1234</strong></li>
+        <li>욕설/비방/개인정보 게시 금지</li>
+      </ul>
+    </div>
+
+    <!-- 로그인 카드 -->
+    <div class="card" id="login-card">
+      <h3>로그인</h3>
+      <form id="login-form" class="form-box">
+        <label>아이디</label>
+        <input type="text" id="login-username" required>
+        <label>비밀번호</label>
+        <input type="password" id="login-password" required>
+        <button type="submit" class="btn-primary full">로그인</button>
+      </form>
+      <p class="form-sub">
+        계정이 없다면? <button class="link-btn" id="show-register">회원가입</button>
+      </p>
+    </div>
+
+    <!-- 회원가입 카드 -->
+    <div class="card hidden" id="register-card">
+      <h3>회원가입</h3>
+      <form id="register-form" class="form-box">
+        <label>아이디</label>
+        <input type="text" id="register-username" required>
+        <label>비밀번호</label>
+        <input type="password" id="register-password" required>
+        <button type="submit" class="btn-primary full">회원가입</button>
+      </form>
+      <p class="form-sub">
+        이미 계정이 있다면? <button class="link-btn" id="show-login">로그인</button>
+      </p>
+    </div>
+  </aside>
+</main>
+
+<footer class="footer">
+  <div>© 2025 우리 학교 커뮤니티. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#">이용약관</a>
+    <a href="#">개인정보처리방침</a>
+    <a href="#">문의하기</a>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
